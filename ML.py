@@ -7,6 +7,8 @@ import numpy as np
 from numpy import dot
 from numpy.linalg import norm
 
+#
+
 
 def write_poscar(i_value):
     # write the POSCAR for one bond angle by moving the Zr and S position
@@ -66,10 +68,10 @@ def value(num):
         parent_folder = '/'.join(curr_folder_list[:-1])
         # print('parent_folder is:', parent_folder)
 
-        shutil.copyfile(parent_folder+'/INCAR', curr_folder+'/INCAR')
-        shutil.copyfile(parent_folder+'/POTCAR', curr_folder+'/POTCAR')
-        shutil.copyfile(parent_folder+'/KPOINTS', curr_folder+'/KPOINTS')
-        shutil.copyfile(parent_folder + '/bandgap.sh', curr_folder + '/bandgap.sh')
+        # shutil.copyfile(parent_folder+'/INCAR', curr_folder+'/INCAR')
+        # shutil.copyfile(parent_folder+'/POTCAR', curr_folder+'/POTCAR')
+        # shutil.copyfile(parent_folder+'/KPOINTS', curr_folder+'/KPOINTS')
+        # shutil.copyfile(parent_folder + '/bandgap.sh', curr_folder + '/bandgap.sh')
 
         write_poscar(i_value)
 
@@ -94,7 +96,6 @@ def value(num):
             break
 
     return i_value
-
 
 print(value(sys.argv[1]))
 
